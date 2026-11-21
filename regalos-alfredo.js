@@ -29,5 +29,6 @@ const GIFTS = [
   { n:"Conjuntos de dos piezas para bebé", e:"🧦", max:5, url:"https://www.falabella.com.pe/falabella-pe/category/cat7350561/Ropa-de-bebe?f.product.attribute.Tipo=conjuntos" },
   { n:"Bodies de algodón", e:"👕", max:5, url:"https://www.falabella.com.pe/falabella-pe/category/CATG15775/Bodies-Ninos-Bebe" },
   { n:"Sonajeros suaves", e:"🎵", max:3, url:"https://www.falabella.com.pe/falabella-pe/search?Ntt=set+de+sonajeros" },
+   { n:"Crema Corporal", e:"🧴", max:3, url:"https://www.mifarma.com.pe/producto/crema-corporal-eucerin-baby-para-piel-sensible/010664" },
   { n:"Shampoo para bebé", e:"🧴", max:1, url:"https://www.falabella.com.pe/falabella-pe/product/17586239/eucerin-baby-bano-y-shampoo-240ml/17586239" }
 ];
