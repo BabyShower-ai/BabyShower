@@ -197,6 +197,8 @@
   }
   .gift-link{font-size:13px; font-weight:700; color:var(--sage-dark); text-decoration:underline; width:fit-content;}
   .gift-card.taken .gift-link{opacity:.5;}
+  .gift-btn{width:100%; margin-top:2px; padding:11px 14px; border:0; border-radius:999px; background:var(--sage-dark); color:#fff; font:inherit; font-weight:800; font-size:14px; cursor:pointer;}
+  .gift-btn:hover{filter:brightness(1.08);}
   .sr-loading{font-size:14px; opacity:.6; margin-top:18px;}
 
   /* yape */
@@ -596,14 +598,11 @@ function renderGifts(){
       <div class="gift-emoji">${g.e}</div>
       <div class="gift-name">${g.n}</div>
       <a class="gift-link" href="${g.url}" target="_blank" rel="noopener">Ver ejemplo ↗</a>
-      <div class="gift-status ${isTaken ? 'taken' : 'available'}"><span class="dot"></span> ${isTaken ? 'Ya reservado' : 'Disponible'}${cnt}</div>`;
+      <div class="gift-status ${isTaken ? 'taken' : 'available'}"><span class="dot"></span> ${isTaken ? 'Ya reservado' : 'Disponible'}${cnt}</div>
+      ${isTaken ? '' : '<button class="gift-btn" type="button">🎁 Reservar este regalo</button>'}`;
     card.querySelector('.gift-link').addEventListener('click', e => e.stopPropagation());
     card.querySelector('.gift-link').addEventListener('keydown', e => e.stopPropagation());
-    if(!isTaken){
-      card.tabIndex = 0; card.setAttribute('role','button');
-      card.addEventListener('click', () => openModal(g.n));
-      card.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openModal(g.n); } });
-    }
+    if(!isTaken) card.addEventListener('click', () => openModal(g.n));
     grid.appendChild(card);
   });
   firstRender = false;
@@ -697,8 +696,8 @@ confirmBtn.addEventListener('click', async () => {
       reservados[giftName] = (reservados[giftName] || 0) + 1;
       renderGifts();
 
-      const pageUrl = location.href.split('#')[0] + '#regalos';
-      const msg = `¡Hola ${nombre}! 🐘💛 Tu asistencia al baby shower de Meylin y Alfredo quedó confirmada.\n\n📅 30 de octubre, 4:00 pm\n\n🎁 Link de la lista de regalos: ${pageUrl}`;
+      const gift = GIFTS.find(x => x.n === giftName) || {};
+      const msg = `¡Hola ${nombre}! 🐘💛 Tu asistencia al baby shower de Meylin y Alfredo quedó confirmada.\n\n📅 30 de octubre, 4:00 pm\n\n🎁 Tu regalo: ${giftName}\n🔗 ${gift.url || ''}`;
       shareWaLink.href = `https://wa.me/${tel}?text=${encodeURIComponent(msg)}`;
       postSuccess.style.display = "block";
       modalActions.style.display = "none";
