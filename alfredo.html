@@ -466,20 +466,20 @@
       <div class="detail-card reveal">
         <div class="ico" style="background:#E4ECF9"><svg viewBox="0 0 24 24" fill="none" stroke="#5B80B8" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></div>
         <div class="label">fecha</div>
-        <div class="value">30 de octubre</div>
-        <div class="hint">Reserva tu tarde 💙</div>
+        <div class="value">12 de diciembre</div>
+        <div class="hint">Reserva la fecha 💙</div>
       </div>
       <div class="detail-card reveal">
         <div class="ico" style="background:#FAF0D2"><svg viewBox="0 0 24 24" fill="none" stroke="#C99A2E" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
         <div class="label">hora</div>
-        <div class="value">4:00 pm</div>
+        <div class="value">6:00 pm</div>
         <div class="hint">Te esperamos puntual</div>
       </div>
-      <a class="detail-card reveal" href="https://maps.app.goo.gl/4AQwXX61RK4bseA37" target="_blank" rel="noopener">
+      <a class="detail-card reveal" href="https://maps.app.goo.gl/aCVr9QisuHEzyfcm9" target="_blank" rel="noopener">
         <div class="ico" style="background:#E4ECF9"><svg viewBox="0 0 24 24" fill="none" stroke="#5B80B8" stroke-width="1.7" stroke-linecap="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
         <div class="label">lugar</div>
         <div class="value">Ver ubicación</div>
-        <div class="hint">Toca para abrir el mapa</div>
+        <div class="hint">Jardines 1699, Lima · toca para abrir el mapa</div>
       </a>
     </div>
   </div>
@@ -808,7 +808,7 @@ confirmBtn.addEventListener('click', async () => {
       renderGifts();
 
       const gift = GIFTS.find(x => x.n === giftName) || {};
-      const msg = `¡Hola ${nombre}! 💙 Tu asistencia al baby shower de Dylan quedó confirmada.\n\n📅 30 de octubre, 4:00 pm\n\n🎁 Tu regalo: ${giftName}\n🔗 ${gift.url || ''}`;
+      const msg = `¡Hola ${nombre}! 💙 Tu asistencia al baby shower de Dylan quedó confirmada.\n\n📅 12 de diciembre, 6:00 pm\n\n🎁 Tu regalo: ${giftName}\n🔗 ${gift.url || ''}`;
       shareWaLink.href = `https://wa.me/${tel}?text=${encodeURIComponent(msg)}`;
       postSuccess.style.display = "block";
       modalActions.style.display = "none";
@@ -828,7 +828,7 @@ confirmBtn.addEventListener('click', async () => {
 </script>
 <script>
 (function(){
-  const EVENT_DATE = new Date("2026-10-30T16:00:00-05:00"); // <-- cambia aquí fecha y hora del evento
+  const EVENT_DATE = new Date("2026-12-12T18:00:00-05:00"); // <-- cambia aquí fecha y hora del evento
   const intro = document.getElementById('intro'), env = document.getElementById('env');
   const music = document.getElementById('bgMusic'), btn = document.getElementById('musicBtn');
   let opened = false, playing = false;
