@@ -595,7 +595,7 @@
 /* ======================================================
    CONFIGURACIÓN
 ====================================================== */
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxhIcY3ue-nzNMlws5TNIk9CNuAUVb5Ha_YeKGAnuHS00wjeON_2EH-X7GB_rLMENWJ/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyoeIBYvHOjaZvL95YS2cMpZU3kXtHxC3n5nBMtnr72fWkvgfAbAHSxKIRjiw9j_w3D-g/exec";
 const HOJA = "Reservas Meylin";
 const WHATSAPP_NUMBER = "51XXXXXXXXX"; // WhatsApp de Meylin
 
@@ -627,7 +627,7 @@ let guest = null;
       document.getElementById('rsvpWa').href = `https://wa.me/${tel}?text=${encodeURIComponent(text)}`;
       document.getElementById('rsvpOk').style.display = 'block';
     }catch(err){
-      msg.textContent = 'No se pudo confirmar. Intenta de nuevo.';
+      msg.textContent = (err && err.message && !/fetch|network/i.test(err.message)) ? err.message : 'No se pudo confirmar. Revisa tu conexión e intenta de nuevo.';
       btn.disabled = false; btn.textContent = 'Confirmar asistencia';
     }
   });
