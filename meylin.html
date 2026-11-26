@@ -360,6 +360,7 @@
   .cal-w{font-size:1.6rem !important;}
 
   .rsvp-box label{display:block; text-align:left; color:#fff; margin:14px auto 6px; max-width:400px; font-weight:700;}
+  .rsvp-box select{display:block; width:100%; max-width:400px; margin:0 auto; padding:13px 16px; border-radius:14px; border:0; font:inherit; color:var(--ink); background:#fff; box-sizing:border-box;}
   .rsvp-box input{display:block; width:100%; max-width:400px; margin:0 auto; padding:13px 16px; border-radius:14px; border:0; font:inherit; color:var(--ink); background:#fff; box-sizing:border-box;}
   .rsvp-msg{min-height:22px; margin:12px auto 0; max-width:400px; font-weight:700; color:#fff;}
 </style>
@@ -500,6 +501,8 @@
         <input id="rsvpNombre" type="text" placeholder="Nombre y apellido" autocomplete="name">
         <label for="rsvpTel">Tu número de WhatsApp</label>
         <input id="rsvpTel" type="tel" inputmode="numeric" maxlength="12" placeholder="Ej. 987654321">
+        <label for="rsvpPers">¿Cuántas personas asistirán? (contándote a ti)</label>
+        <select id="rsvpPers"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
         <div class="rsvp-msg" id="rsvpMsg"></div>
         <button class="btn-wa" id="rsvpBtn" type="button" style="border:0; cursor:pointer;">Confirmar asistencia</button>
       </div>
@@ -613,16 +616,17 @@ let guest = null;
     const nombre = nom.value.trim();
     let tel = telI.value.replace(/\D/g, ''); if(tel.length === 9) tel = '51' + tel;
     if(!nombre || !/^\d{11,12}$/.test(tel)){ msg.textContent = 'Escribe tu nombre y tu WhatsApp (9 dígitos).'; return; }
+    const personas = parseInt(document.getElementById('rsvpPers').value, 10) || 1;
     btn.disabled = true; btn.textContent = 'Enviando…'; msg.textContent = '';
     try{
       const res = await fetch(APPS_SCRIPT_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({ tipo: 'asistencia', hoja: HOJA, nombre, telefono: tel }) });
+        body: JSON.stringify({ tipo: 'asistencia', hoja: HOJA, nombre, telefono: tel, personas }) });
       const data = await res.json();
       if(!data.ok) throw new Error(data.error || 'Error');
       guest = { nombre, tel };
       document.getElementById('rsvpForm').style.display = 'none';
-      document.getElementById('rsvpOkText').textContent = `¡Gracias, ${nombre}! Tu asistencia quedó confirmada 💙`;
-      const text = `¡Hola ${nombre}! 💙 Tu asistencia al baby shower de Dylan quedó confirmada.\n\n🎁 Si deseas regalarnos algo, aquí está la lista: ${location.href.split('#')[0]}#regalos`;
+      document.getElementById('rsvpOkText').textContent = `¡Gracias, ${nombre}! Tu asistencia quedó confirmada para ${personas} ${personas === 1 ? 'persona' : 'personas'} 💙`;
+      const text = `¡Hola ${nombre}! 💙 Tu asistencia al baby shower de Dylan quedó confirmada para ${personas} ${personas === 1 ? 'persona' : 'personas'}.\n\n🎁 Si deseas regalarnos algo, aquí está la lista: ${location.href.split('#')[0]}#regalos`;
       document.getElementById('rsvpWa').href = `https://wa.me/${tel}?text=${encodeURIComponent(text)}`;
       document.getElementById('rsvpOk').style.display = 'block';
     }catch(err){
