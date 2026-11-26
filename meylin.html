@@ -319,14 +319,15 @@
   .intro-names{font-family:'Cormorant Garamond',serif; color:var(--ink); font-size:clamp(.95rem,4vw,1.15rem); margin:0;}
   #intro .tap{margin-top:30px; font-family:'Great Vibes',cursive; font-weight:700; font-size:1.55rem; color:var(--cocoa); margin-bottom:0; animation:tapPulse 1.6s ease-in-out infinite;}
   @keyframes tapPulse{0%,100%{transform:scale(1); opacity:.8} 50%{transform:scale(1.07); opacity:1}}
-  .env-wrap{position:relative; margin-top:64px;}
+  .intro-title .d{font-family:'Great Vibes',cursive; font-size:clamp(2.1rem,10vw,2.9rem); color:var(--sage-dark); margin-top:-6px;}
+  .env-wrap{position:relative; margin-top:56px;}
   .env{position:relative; width:min(320px,82vw); height:min(210px,54vw); background:var(--sky-dark); border-radius:8px; box-shadow:var(--shadow); cursor:pointer; perspective:900px;}
-  .env-card{position:absolute; left:7%; right:7%; top:7%; bottom:7%; background:var(--paper); border-radius:6px; padding:12px 8px; z-index:1; transition:transform .9s .45s ease; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; align-items:center;}
-  .env-card h3{font-size:1.2rem; line-height:1.15;}
+  .env-card{position:absolute; left:7%; right:7%; top:7%; bottom:7%; background:var(--paper); border-radius:6px; padding:12px 8px; z-index:1; transition:transform 1.5s .9s ease; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; align-items:center;}
+  .env-card h3{font-size:1.35rem; line-height:1.15;}
   .env-card p{margin:4px 0 0; font-size:.85rem; color:var(--ink);}
   .env.open .env-card{transform:translateY(-64%);}
   .env-front{position:absolute; inset:0; z-index:2; background:var(--sky); clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%); border-radius:8px;}
-  .env-flap{position:absolute; top:0; left:0; right:0; height:56%; z-index:3; background:var(--sky-dark); filter:brightness(1.06); clip-path:polygon(0 0,100% 0,50% 100%); transform-origin:top; transition:transform .6s ease, z-index 0s .3s;}
+  .env-flap{position:absolute; top:0; left:0; right:0; height:56%; z-index:3; background:var(--sky-dark); filter:brightness(1.06); clip-path:polygon(0 0,100% 0,50% 100%); transform-origin:top; transition:transform .9s ease, z-index 0s .45s;}
   .env.open .env-flap{transform:rotateX(180deg); z-index:0;}
   .env-seal{position:absolute; left:50%; top:56%; width:54px; height:54px; margin:-27px 0 0 -27px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #F7E2A0, #DDAE45 60%, #B8862A); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-weight:700; font-size:14px; color:#7a5a14; z-index:4; box-shadow:0 3px 8px rgba(110,85,62,.35); transition:opacity .3s;}
   .env.open .env-seal{opacity:0;}
@@ -357,16 +358,20 @@
   #intro .tap{font-size:1.9rem !important;}
   .cd-title{font-size:2.4rem !important;}
   .cal-w{font-size:1.6rem !important;}
+
+  .rsvp-box label{display:block; text-align:left; color:#fff; margin:14px auto 6px; max-width:400px; font-weight:700;}
+  .rsvp-box input{display:block; width:100%; max-width:400px; margin:0 auto; padding:13px 16px; border-radius:14px; border:0; font:inherit; color:var(--ink); background:#fff; box-sizing:border-box;}
+  .rsvp-msg{min-height:22px; margin:12px auto 0; max-width:400px; font-weight:700; color:#fff;}
 </style>
 </head>
 <body>
 <div id="intro">
   <div class="bunting"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-  <div class="intro-title"><span class="b">BABY</span><span class="s">Shower</span></div>
-  <p class="intro-names">Dylan · Meylin &amp; Alfredo</p>
+  <div class="intro-title"><span class="b">BABY</span><span class="s">Shower</span><span class="d">de Dylan</span></div>
+  <p class="intro-names">Sus papás: Meylin &amp; Alfredo 💙</p>
   <div class="env-wrap">
     <div class="env" id="env" role="button" tabindex="0" aria-label="Abrir invitación">
-      <div class="env-card"><h3>Baby Shower</h3><p>¡Te invitan al baby shower de Dylan! 💙</p></div>
+      <div class="env-card"><h3>Baby Shower de Dylan</h3><p>Papás: Meylin y Alfredo 💙</p><p>¡Te esperamos!</p></div>
       <div class="env-front"></div>
       <div class="env-flap"></div>
       <div class="env-seal">M&amp;A</div>
@@ -437,7 +442,7 @@
     </a>
   </div>
 
-  <svg class="wave bottom" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path fill="#FBF6EA" d="M0 30 C240 70 480 0 720 28 C960 56 1200 10 1440 34 L1440 60 L0 60Z"/></svg>
+  <svg class="wave bottom" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path fill="#F6F5FC" d="M0 30 C240 70 480 0 720 28 C960 56 1200 10 1440 34 L1440 60 L0 60Z"/></svg>
 </section>
 
 <!-- ============ DETALLES ============ -->
@@ -479,17 +484,46 @@
   </div>
 </section>
 
+<!-- ============ RSVP ============ -->
+<section class="stop" id="confirmar">
+  <div class="wrap">
+    <div class="badge reveal">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B80B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <span class="kicker reveal">primero lo primero</span>
+    <h2 class="reveal">¿Nos acompañas?</h2>
+    <p class="lead reveal">Confirma tu asistencia con tu nombre y tu número de WhatsApp 💙</p>
+    <div class="rsvp-box reveal">
+      <h3>Confirma tu asistencia</h3>
+      <div id="rsvpForm">
+        <label for="rsvpNombre">Tu nombre</label>
+        <input id="rsvpNombre" type="text" placeholder="Nombre y apellido" autocomplete="name">
+        <label for="rsvpTel">Tu número de WhatsApp</label>
+        <input id="rsvpTel" type="tel" inputmode="numeric" maxlength="12" placeholder="Ej. 987654321">
+        <div class="rsvp-msg" id="rsvpMsg"></div>
+        <button class="btn-wa" id="rsvpBtn" type="button" style="border:0; cursor:pointer;">Confirmar asistencia</button>
+      </div>
+      <div id="rsvpOk" style="display:none;">
+        <p id="rsvpOkText"></p>
+        <a class="btn-wa" id="rsvpWa" href="#" target="_blank" rel="noopener">Enviarme mi confirmación por WhatsApp</a>
+      </div>
+    </div>
+    <p class="lead reveal" style="margin-top:28px;">Si deseas obsequiarnos algo, ya hay una lista con los regalos que aún nos faltarían. No es obligatorio, solo si te nace 💙</p>
+    <a class="btn-share outline reveal" href="#regalos" style="display:inline-block; text-decoration:none;">Ver lista de regalos ↓</a>
+  </div>
+</section>
+
 <!-- ============ REGALOS ============ -->
 <section class="stop alt" id="regalos">
-  <svg class="wave top" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path fill="#FBF6EA" d="M0 30 C240 70 480 0 720 28 C960 56 1200 10 1440 34 L1440 60 L0 60Z"/></svg>
-  <svg class="wave bottom" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path fill="#FBF6EA" d="M0 34 C240 8 480 62 720 30 C960 0 1200 56 1440 26 L1440 60 L0 60Z"/></svg>
+  <svg class="wave top" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path fill="#F6F5FC" d="M0 30 C240 70 480 0 720 28 C960 56 1200 10 1440 34 L1440 60 L0 60Z"/></svg>
+  <svg class="wave bottom" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path fill="#F6F5FC" d="M0 34 C240 8 480 62 720 30 C960 0 1200 56 1440 26 L1440 60 L0 60Z"/></svg>
   <div class="wrap">
     <div class="badge reveal">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B80B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 8h18M12 8v13M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>
     </div>
     <span class="kicker reveal">con mucho cariño</span>
     <h2 class="reveal">Mesa de regalos</h2>
-    <p class="lead reveal">Elige un detalle para nuestro bebé. Al reservarlo con tu nombre y DNI, nadie más podrá elegirlo, así evitamos duplicados 💙</p>
+    <p class="lead reveal">Si deseas obsequiarnos algo, esta es la lista de lo que aún nos faltaría. Es opcional. Al reservar un regalo con tu nombre y WhatsApp, nadie más lo repetirá 💙</p>
 
     <div class="legend reveal">
       <span class="pill" style="color:#5B80B8"><span class="dot"></span> Disponible</span>
@@ -508,34 +542,14 @@
     <div class="badge reveal">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><path d="M14 14h2.5M18.5 14H20M14 17.5v2.5M17 17h.01M14 20h6v-6"/></svg>
     </div>
-    <span class="kicker reveal">otra forma de ayudar</span>
+    <span class="kicker reveal">si no te decides</span>
     <h2 class="reveal">¿Prefieres aportar por Yape?</h2>
-    <p class="lead reveal">También es muy bienvenido. Escanea el código con tu app y listo 💜</p>
+    <p class="lead reveal">Si no te decides por un regalo, también puedes ayudarnos con un Yape. Es opcional y se agradece con el corazón. Escanea el código con tu app 💜</p>
 
     <div class="polaroid reveal">
       <img src="yape-qr-meylin.png" alt="Código QR de Yape de Meylin" class="yape-qr-img">
       <div class="yape-name">Nombre completo de Meylin</div>
       <p class="yape-hint">Escanea desde tu app Yape</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ RSVP ============ -->
-<section class="stop" id="confirmar" style="padding-top:40px;">
-  <div class="wrap">
-    <div class="badge reveal">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B80B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-    </div>
-    <span class="kicker reveal">un último paso</span>
-    <h2 class="reveal">¿Nos acompañas?</h2>
-    <p class="lead reveal">Ya elegiste tu regalo (o no, ¡no es obligatorio!). Ahora avísanos que vienes 🦒</p>
-    <div class="rsvp-box reveal">
-      <h3>Confirma tu asistencia</h3>
-      <p>Escríbenos por WhatsApp para reservar tu lugar en la manada</p>
-      <a class="btn-wa" id="waLink" href="#" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
-        Confirmar por WhatsApp
-      </a>
     </div>
   </div>
 </section>
@@ -591,9 +605,34 @@ const WHATSAPP_NUMBER = "51XXXXXXXXX"; // WhatsApp de Meylin
 ====================================================== */
 /* La lista de regalos está en regalos-meylin.js */
 
-/* RSVP WhatsApp */
-const waMsg = encodeURIComponent("¡Hola! Confirmo mi asistencia al baby shower de Dylan el 30 de octubre 💙");
-document.getElementById('waLink').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMsg}`;
+/* Confirmación de asistencia */
+let guest = null;
+(function(){
+  const nom = document.getElementById('rsvpNombre'), telI = document.getElementById('rsvpTel');
+  const btn = document.getElementById('rsvpBtn'), msg = document.getElementById('rsvpMsg');
+  btn.addEventListener('click', async () => {
+    const nombre = nom.value.trim();
+    let tel = telI.value.replace(/\D/g, ''); if(tel.length === 9) tel = '51' + tel;
+    if(!nombre || !/^\d{11,12}$/.test(tel)){ msg.textContent = 'Escribe tu nombre y tu WhatsApp (9 dígitos).'; return; }
+    btn.disabled = true; btn.textContent = 'Enviando…'; msg.textContent = '';
+    try{
+      const res = await fetch(APPS_SCRIPT_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ tipo: 'asistencia', hoja: HOJA, nombre, telefono: tel }) });
+      const data = await res.json();
+      if(!data.ok) throw new Error(data.error || 'Error');
+      guest = { nombre, tel };
+      document.getElementById('rsvpForm').style.display = 'none';
+      document.getElementById('rsvpOkText').textContent = `¡Gracias, ${nombre}! Tu asistencia quedó confirmada 💙`;
+      const text = `¡Hola ${nombre}! 💙 Tu asistencia al baby shower de Dylan quedó confirmada.\n\n🎁 Si deseas regalarnos algo, aquí está la lista: ${location.href.split('#')[0]}#regalos`;
+      document.getElementById('rsvpWa').href = `https://wa.me/${tel}?text=${encodeURIComponent(text)}`;
+      document.getElementById('rsvpOk').style.display = 'block';
+    }catch(err){
+      msg.textContent = 'No se pudo confirmar. Intenta de nuevo.';
+      btn.disabled = false; btn.textContent = 'Confirmar asistencia';
+    }
+  });
+})();
+
 
 /* Título animado letra por letra */
 (function(){
@@ -712,7 +751,7 @@ let currentGift = null;
 function openModal(name){
   currentGift = name;
   modalGiftName.textContent = name;
-  inpNombre.value = ""; inpDni.value = "";
+  inpNombre.value = guest ? guest.nombre : ""; inpDni.value = guest ? guest.tel.replace(/^51/, "") : "";
   modalMsg.className = "modal-msg"; modalMsg.textContent = "";
   confirmBtn.disabled = false; confirmBtn.textContent = "Reservar";
   postSuccess.style.display = "none"; modalActions.style.display = "flex";
@@ -791,14 +830,21 @@ confirmBtn.addEventListener('click', async () => {
   let opened = false, playing = false;
   document.documentElement.style.overflow = 'hidden';
   function setLabel(){ btn.textContent = playing ? '⏸ Pausar música' : '▶ Click para reproducir'; }
+  let closed = false;
+  function close(){
+    if(closed) return; closed = true;
+    intro.classList.add('hide');
+    setTimeout(() => { intro.remove(); document.documentElement.style.overflow = ''; }, 900);
+  }
   function open(){
     if(opened) return; opened = true;
     env.classList.add('open');
+    intro.querySelector('.tap').textContent = 'Toca para continuar';
     music.volume = 0.6;
     btn.style.display = 'block';
     music.play().then(() => { playing = true; setLabel(); }).catch(() => {});
-    setTimeout(() => intro.classList.add('hide'), 1900);
-    setTimeout(() => { intro.remove(); document.documentElement.style.overflow = ''; }, 2800);
+    setTimeout(close, 5600);
+    setTimeout(() => intro.addEventListener('click', close), 1500);
   }
   env.addEventListener('click', open);
   env.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); } });
