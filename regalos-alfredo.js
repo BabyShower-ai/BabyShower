@@ -29,5 +29,13 @@ const GIFTS = [
   { n:"Conjuntos de dos piezas para bebé", e:"🧦", max:5, url:"https://www.falabella.com.pe/falabella-pe/category/cat7350561/Ropa-de-bebe?f.product.attribute.Tipo=conjuntos" },
   { n:"Bodies de algodón", e:"👕", max:5, url:"https://www.falabella.com.pe/falabella-pe/category/CATG15775/Bodies-Ninos-Bebe" },
   { n:"Sonajeros suaves", e:"🎵", max:3, url:"https://www.falabella.com.pe/falabella-pe/search?Ntt=set+de+sonajeros" },
-  { n:"Shampoo para bebé", e:"🧴", max:1, url:"https://www.falabella.com.pe/falabella-pe/product/17586239/eucerin-baby-bano-y-shampoo-240ml/17586239" }
+  { n:"Shampoo para bebé", e:"🧴", max:1, url:"https://www.falabella.com.pe/falabella-pe/product/17586239/eucerin-baby-bano-y-shampoo-240ml/17586239" },
+  { n:"Pijama de algodón para bebé", e:"👶", max:5, url:"https://www.falabella.com.pe/falabella-pe/search?Ntt=pijama%20algodon%20bebe" },
+  { n:"Muselina para bebé", e:"☁️", max:5, url:"https://www.falabella.com.pe/falabella-pe/search?Ntt=muselina%20bebe" },
+  { n:"Toalla de baño para bebé", e:"🛁", max:5, url:"https://www.falabella.com.pe/falabella-pe/search?Ntt=toalla%20bebe" },
+  { n:"Mantas para bebé", e:"💤", max:5, url:"https://www.falabella.com.pe/falabella-pe/search?Ntt=manta%20bebe" },
+  { n:"Babero para bebé", e:"🍼", max:5, url:"https://www.falabella.com.pe/falabella-pe/search?Ntt=babero%20bebe" },
+  { n:"Juego didáctico para bebé", e:"🧩", max:3, url:"https://www.falabella.com.pe/falabella-pe/search?Ntt=juguetes%20didacticos%20bebe" },
+  { n:"Body de manga corta para bebé", e:"👕", max:5, url:"https://www.falabella.com.pe/falabella-pe/search?Ntt=body%20bebe%20manga%20corta" },
+  { n:"Kit de higiene básico para bebé", e:"🧴", max:3, url:"https://www.falabella.com.pe/falabella-pe/search?Ntt=kit%20higiene%20bebe" },
 ];
