@@ -472,7 +472,7 @@
       <div class="detail-card reveal">
         <div class="ico" style="background:#FAF0D2"><svg viewBox="0 0 24 24" fill="none" stroke="#C99A2E" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
         <div class="label">hora</div>
-        <div class="value">6:00 pm</div>
+        <div class="value">8:00 pm</div>
         <div class="hint">Te esperamos puntual</div>
       </div>
       <a class="detail-card reveal" href="https://maps.app.goo.gl/aCVr9QisuHEzyfcm9" target="_blank" rel="noopener">
@@ -808,7 +808,7 @@ confirmBtn.addEventListener('click', async () => {
       renderGifts();
 
       const gift = GIFTS.find(x => x.n === giftName) || {};
-      const msg = `¡Hola ${nombre}! 💙 Tu asistencia al baby shower de Dylan quedó confirmada.\n\n📅 12 de diciembre, 6:00 pm\n\n🎁 Tu regalo: ${giftName}\n🔗 ${gift.url || ''}`;
+      const msg = `¡Hola ${nombre}! 💙 Tu asistencia al baby shower de Dylan quedó confirmada.\n\n📅 12 de diciembre, 8:00 pm\n\n🎁 Tu regalo: ${giftName}\n🔗 ${gift.url || ''}`;
       shareWaLink.href = `https://wa.me/${tel}?text=${encodeURIComponent(msg)}`;
       postSuccess.style.display = "block";
       modalActions.style.display = "none";
@@ -828,7 +828,7 @@ confirmBtn.addEventListener('click', async () => {
 </script>
 <script>
 (function(){
-  const EVENT_DATE = new Date("2026-12-12T18:00:00-05:00"); // <-- cambia aquí fecha y hora del evento
+  const EVENT_DATE = new Date("2026-12-12T20:00:00-05:00"); // <-- cambia aquí fecha y hora del evento
   const intro = document.getElementById('intro'), env = document.getElementById('env');
   const music = document.getElementById('bgMusic'), btn = document.getElementById('musicBtn');
   let opened = false, playing = false;
