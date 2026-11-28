@@ -13,6 +13,7 @@
 ====================================================== */
 const GIFTS = [
   { n:"Cuna para bebé", e:"🛏️", max:1, url:"https://infanti.com.pe/collections/cunas" },
+  { n:"Mecedora para bebé", e:"🛒", max:1, url:"https://www.falabella.com.pe/falabella-pe/product/148027070/Silla-Mecedora-Didactica-%C2%ABSTAR-II%C2%BB-con-Bluetooth-Gris/148027071" },
   { n:"Coche para bebé", e:"🛒", max:1, url:"https://www.falabella.com.pe/falabella-pe/category/cat800474/Coches?f.product.brandName=infanti" },
   { n:"Monitor para bebé", e:"📹", max:1, url:"https://www.falabella.com.pe/falabella-pe/shop/monitor-para-bebe" },
   { n:"Nido colecho", e:"🪺", max:1, url:"https://infanti.com.pe/products/nido-colecho-bebe?variant=51254244180268" },
